@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    // Declared variables
+    int minutes, hours, days, weeks, years, ten_years;
+
+    // Prompt the user for the number of minutes
+    printf("Enter the number of minutes: ");
+    scanf("%d", &minutes);
+
+    // Converting minutes into hours, days, weeks, years, and ten years
+    hours = minutes / 60; // 1 hour = 60 minutes
+    days = minutes / (60 * 24); // 1 day = 1440 minutes
+    weeks = minutes / (60 * 24 * 7); // 1 week = 10080 minutes
+    years = minutes / (60 * 24 * 365); // 1 year = 525600 minutes
+    ten_years = minutes / (60 * 24 * 365 * 10); // 10 years = 5256000 minutes
+
+    // Display the converted time
+    printf("\nConverted Time: \n");
+    printf("Minutes: %d\n", minutes);
+    printf("Hours: %d\n", hours);
+    printf("Days: %d\n", days);
+    printf("Weeks: %d\n", weeks);
+    printf("1 Year: %d\n", years);
+    printf("10 Years: %d\n", ten_years);
+
+    return 0;
+}
