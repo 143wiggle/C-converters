@@ -36,3 +36,13 @@ int main() {
     printf("Your height: %d feet %.2f inches\n", feet, inches);
     return 0;
 }
+____________________________________________________________________________
+Summary:
+Why (int) is used:
+•	(int)(totalInches / 12):
+This converts the total number of inches into feet. 
+Since a foot is 12 inches, we divide the total inches by 12. 
+The result of this division might have a fractional part (e.g., 8.5 feet). 
+By casting it to an int,
+we drop the decimal part and only keep the whole number part (8 feet).
+
