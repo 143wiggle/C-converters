@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    char name[100]; // Variable to store the student's name
+    int age;        // Variable to store the student's age
+
+    // Ask the user for their name
+    printf("Enter your name: ");
+    scanf("%s", name);
+
+    // Ask the user for their age
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    // Check eligibility based on age
+    if (age <= 17) {
+        printf("You are still %d, you're not an eligible voter, %s.\n", age, name); // If age is 17 or less
+    } else if (age >= 18) {
+        printf("You are %d, you are an eligible voter, %s.\n", age, name); // If age is 18 or more
+    } else {
+        printf("Your input is invalid.\n"); // Invalid input case
+    }
+
+    return 0;
+}
