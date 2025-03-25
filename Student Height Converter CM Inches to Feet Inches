@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    float height;  // Variable to store height (expected type: float, floating-point number with single precision)
+    int choice;
+    int feet;
+    float inches;  // Variable to store inches (expected type: float, floating-point number with single precision)
+
+    // Ask the user to choose the unit of height
+    printf("Enter student Height:\n");
+    printf("1. Centimeters (cm)\n");
+    printf("2. Inches (in)\n");
+    printf("Enter your choice (1 or 2): ");
+    scanf("%d", &choice);
+
+    // Ask the user for their height
+    printf("Enter your height: ");
+    scanf("%f", &height);  // Expecting float input (e.g., 170.5 for cm or 66.2 for inches)
+
+    // Convert based on the user's choice
+    if (choice == 1) {  // If they chose centimeters
+        float totalInches = height / 2.54;  // Convert cm to inches
+        feet = (int)(totalInches / 12);     // Convert inches to feet and cast to int to drop decimal part
+        inches = totalInches - (feet * 12); // Get remaining inches (not converting to int as it may contain decimals)
+    } 
+    else if (choice == 2) {  // If they chose inches
+        feet = (int)(height / 12);  // Convert inches to feet and cast to int to drop decimal part
+        inches = height - (feet * 12);  // Get remaining inches
+    } 
+    else {  // Invalid choice
+        printf("Invalid choice! Please enter 1 for cm or 2 for inches.\n");
+        return 1;  // Exit with error code
+    }
+
+    // Show the result
+    printf("Your height: %d feet %.2f inches\n", feet, inches);
+    return 0;
+}
